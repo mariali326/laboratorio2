@@ -3,6 +3,7 @@
 //
 
 #include "User.h"
+#include "Chat.h"
 
 User::~User() {
     if(!chats.empty()){

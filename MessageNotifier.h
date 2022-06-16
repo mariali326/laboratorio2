@@ -31,11 +31,11 @@ public:
     MessageNotifier(bool act, Chat* sub) : active(act), subject(sub){}
     virtual ~MessageNotifier(){}
 
-    virtual void attach() override;
+    void attach() override;
 
-    virtual void detach() override;
+    void detach() override;
 
-    virtual void update() override ;
+    void update() override ;
 
     void draw(const Message &ms);
 

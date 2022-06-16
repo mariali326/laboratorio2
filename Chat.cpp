@@ -4,7 +4,7 @@
 
 #include "Chat.h"
 
-Chat::Chat(User mn, User on):myName(mn.getName()), otherName(on.getName()) {}
+Chat::Chat(const User& mn, const User& on):myName(mn.getName()), otherName(on.getName()) {}
 
 Chat::~Chat() {
     for (auto obs:observers)

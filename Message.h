@@ -6,13 +6,14 @@
 #define LABORATORIO_MESSAGE_H
 
 #include <iostream>
+#include <utility>
 #include <vector>
 #include <list>
 #include <ctime>
 
 class Message{
 public:
-    Message(std::string se, std::string re, std::string te, bool r = false): sender(se), receiver(re), text(te), read(r){
+    Message(std::string  se,const std::string& re,const std::string& te, bool r = false): sender(std::move(se)), receiver(re), text(te), read(r){
         time(&currentTime);
     }
     const std::string & getSender() const {
@@ -35,6 +36,10 @@ public:
 
     time_t getCurrentTime() const {
         return currentTime;
+    }
+
+    bool operator==(const Message& m) const{
+        return (m.sender == sender and m.receiver == receiver and m.text == text);
     }
 
 private:

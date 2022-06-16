@@ -8,16 +8,13 @@
 #include <iostream>
 #include <memory>
 #include <map>
-#include "Chat.h"
+#include <utility>
 
-#include <iostream>
-#include <map>
-#include "Chat.h"
 
 class Chat;
 class User {
 public:
-    User(std::string name) : name(name) {}
+    explicit User(std::string name) : name(std::move(name)) {}
 
     ~User();
 
@@ -26,7 +23,7 @@ public:
     }
 
     void setName(const std::string &name) {
-        User::name = name;
+        this->name = name;
     }
 
     void createChat(const User& u);

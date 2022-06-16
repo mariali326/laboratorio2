@@ -13,12 +13,11 @@
 #include "Message.h"
 #include "Subject.h"
 
-class User;
 class Chat : public Subject {
 public:
-    explicit Chat(User mn, User on);
+    explicit Chat(const User& mn, const User& on);
 
-    virtual ~Chat();
+    ~Chat() override;
 
     void addMessage(const Message& newMsg);
 
@@ -28,11 +27,11 @@ public:
 
     int getUnreadMessages() const;
 
-    virtual void subscribe(Observer* observer) override;
+    void subscribe(Observer* observer) override;
 
-    virtual void unsubscribe(Observer* observer) override;
+    void unsubscribe(Observer* observer) override;
 
-    virtual void notify() override;
+    void notify() override;
 
     const std::string &getMyName() const;
 
