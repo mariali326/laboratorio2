@@ -14,15 +14,15 @@
 
 class IconBadgeMonitor: public Observer {
 public:
-     IconBadgeMonitor(Chat* sub):subject(sub){}
+     explicit IconBadgeMonitor(Chat* sub):subject(sub){}
 
     virtual ~IconBadgeMonitor(){}
 
-    virtual void attach() override;
+    void attach() override;
 
-    virtual void detach() override;
+    void detach() override;
 
-    virtual void update() override;
+    void update() override;
 
     void draw(int um);
 

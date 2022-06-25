@@ -24,6 +24,7 @@ const Message& Chat::lastMessage() const{
 
 void Chat::readMessage(int i){
     if(i>0 && i<messages.size()) {
+
         if (messages[i].getSender() == otherName) {
             std::cout <<"Sender: "<< messages[i].getSender() <<", "<<"Receiver: "<< messages[i].getReceiver() << std::endl;
             std::cout <<"Text: "<< messages[i].getText() << std::endl;
@@ -34,13 +35,30 @@ void Chat::readMessage(int i){
     else
         throw std::out_of_range(" Message not present on chat");
 }
-int Chat::getUnreadMessages() const{
+    int Chat::getUnreadMessages() const{
     int i=0;
     for(const auto& message:messages)
         if(message.getReceiver()==myName)
             if (!message.isRead())
                 i++;
     return i;
+}
+int Chat::getReadMessages() const{
+    int i=0;
+    for(const auto& message:messages)
+        if(message.getReceiver()==myName)
+            if (message.isRead())
+                i++;
+    return i;
+}
+int Chat::getTotalMessages() const {
+    int i=0;
+    for(const auto& message:messages)
+            i++;
+    return i;
+}
+void Chat::showTotalMessages() const{
+    std::cout<<"Total Messagges between "<<myName<<" and "<<otherName<<" are "<<this->getTotalMessages()<<std::endl;
 }
 void Chat::subscribe(Observer* observer) {
     observers.push_back(observer);
@@ -68,4 +86,6 @@ void Chat::setOtherName(const std::string &otherName) {
 const std::string &Chat::getOtherName() const {
     return otherName;
 }
+
+
 

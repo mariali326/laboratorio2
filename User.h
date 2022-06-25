@@ -14,7 +14,7 @@
 class Chat;
 class User {
 public:
-    explicit User(std::string name) : name(std::move(name)) {}
+    explicit User(const std::string& name) : name(name) {}
 
     ~User();
 
@@ -28,6 +28,7 @@ public:
 
     void createChat(const User& u);
     void removeChat(const User& u);
+
 
 private:
     std::string name;

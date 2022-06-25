@@ -13,7 +13,7 @@
 
 class Message{
 public:
-    Message(std::string  se,std::string  re,std::string te, bool r = false): sender(std::move(se)), receiver(std::move(re)), text(te), read(r){
+    Message(const std::string&   se,const std::string&   re,const std::string&  te,bool r = false): sender(se), receiver(re), text(te), read(r){
         time(&currentTime);
     }
     const std::string & getSender() const {
@@ -45,7 +45,7 @@ public:
 private:
     bool read;
     std::string sender, receiver, text;
-    time_t currentTime;
+    time_t currentTime{};
 };
 
 #endif //LABORATORIO_MESSAGE_H

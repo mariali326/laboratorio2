@@ -29,5 +29,7 @@ int main() {
     catch (std::out_of_range &e) {
         std::cerr << "Out of range error:" << e.what() << std::endl;
     }
+    Maria_Chiara.getTotalMessages();
+    Maria_Chiara.showTotalMessages();
     maria.removeChat(chiara);
 }

@@ -27,6 +27,12 @@ public:
 
     int getUnreadMessages() const;
 
+    int getReadMessages() const;
+
+    int getTotalMessages() const;
+
+    void showTotalMessages() const;
+
     void subscribe(Observer* observer) override;
 
     void unsubscribe(Observer* observer) override;
