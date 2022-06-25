@@ -35,7 +35,7 @@ void Chat::readMessage(int i){
     else
         throw std::out_of_range(" Message not present on chat");
 }
-    int Chat::getUnreadMessages() const{
+int Chat::getUnreadMessages() const{
     int i=0;
     for(const auto& message:messages)
         if(message.getReceiver()==myName)

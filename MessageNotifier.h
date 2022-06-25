@@ -16,16 +16,6 @@
 #include "Chat.h"
 
 
-#include <iostream>
-#include <vector>
-#include <list>
-#include <ctime>
-
-#include "Message.h"
-#include "Observer.h"
-#include "Chat.h"
-
-
 class MessageNotifier: public Observer{
 public:
     MessageNotifier(bool act, Chat* sub) : active(act), subject(sub){}

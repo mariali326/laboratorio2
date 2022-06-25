@@ -6,8 +6,8 @@
 #include "../MessageNotifier.h"
 
 TEST(MessageNotifier, isActive) {
-    User a("Maria");
-    User b("Sara");
+    User a{"Maria"};
+    User b{"Sara"};
     Chat c (a, b);
     MessageNotifier m(true,&c);
     ASSERT_TRUE(m.isActive());
