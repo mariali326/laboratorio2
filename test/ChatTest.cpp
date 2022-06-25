@@ -33,7 +33,7 @@ TEST_F(ChatTest,functions){
     ASSERT_THROW(c.readMessage(0), std::out_of_range);
 }
 
-TEST_F(ChatTest, SwappedMessages) {
+TEST_F(ChatTest, countMessages) {
     Chat c(a,b);
     Message foo("Maria", "Chiara", "Hi Chiara, how's it going?");
     c.addMessage(foo);
