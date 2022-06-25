@@ -6,7 +6,7 @@
 #include "../User.h"
 
 TEST(User, GetterSetter) {
-    User l("Lapo");
+    User l{"Lapo"};
     ASSERT_EQ(l.getName(), "Lapo");
     l.setName("Gianluca");
     ASSERT_EQ(l.getName(), "Gianluca");
