@@ -40,7 +40,7 @@ TEST_F(ChatTest, countMessages) {
     Message bar("Chiara", "Maria", "Great. What about you?");
     c.addMessage(bar);
     ASSERT_EQ(c.getUnreadMessages(),1);
-    c.readMessage(1);
+    ASSERT_NO_THROW(c.readMessage(1));
     Message  fooBar("Maria", "Chiara", "I'm pretty well too.");
     c.addMessage(fooBar);
     ASSERT_EQ(c.getUnreadMessages(),0);
